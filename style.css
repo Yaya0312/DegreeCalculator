@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    background-color: aquamarine;
+}
+
+h5 {
+    margin: 1px;
+}
+
+.valid {
+    background-color: chartreuse;
+}
+
+.notValid {
+    background-color: red;
+}
+
+#semestres {
+    display: flex;
+}
+
+h5 {
+    display: inline;
+}
+
+#calculator {
+    
+}
