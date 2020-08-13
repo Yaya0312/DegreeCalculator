@@ -4,7 +4,6 @@
 const getsNodes = (x) => document.querySelectorAll(x);
 const zip = (a1, a2) => a1.map((x, i) => [x, a2[i]]); // a[int], b[int] -> [[a[0],b[0]]...,[a[n],b[n]]]
 const sum = (arr) => arr.reduce((a,c) => a + c); // a[int] -> (a[0] + ... + a[n])
-const toInt = (arr) => arr.map(x => +x)
 
 // data
 const matersS1 = ['MPOO2','ALGO3','SE','TL','ANG','POP3'];
@@ -15,7 +14,7 @@ function refresh(sem) {
     const notes = Array.from(getsNodes(`#${sem} .note`)).map( x => x.value);
     const coefs = Array.from(getsNodes(`#${sem} .coef`)).map( x => x.value);
     const resultSemestre = sum(zip(notes, coefs).map(x => x[0] * x[1]));
-    const sumCoef = sum(coefs.map(x=>Number(x)));
+    const sumCoef = sum(coefs.map(x => Number(x)));
     document.getElementById("note" + sem).value = resultSemestre / sumCoef;
     //final
     const notesSemestre = Array.from(getsNodes(".noteSemestre")).map(x => x.value);
