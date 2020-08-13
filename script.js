@@ -1,10 +1,17 @@
 'use strict'
 
-// tools function
+// tools functions
 const getsNodes = (x) => document.querySelectorAll(x);
 const zip = (a1, a2) => a1.map((x, i) => [x, a2[i]]); // a[int], b[int] -> [[a[0],b[0]]...,[a[n],b[n]]]
 const sum = (arr) => arr.reduce((a,c) => a + c); // a[int] -> (a[0] + ... + a[n])
-const toInt = (arr) => arr.map(x => +x);
+const toInt = (arr) => arr.map(x => +x)
+const lock = () => 
+
+// functions
+
+function add(sem) {
+  addMater(" ",sem);
+}
 
 // data
 const matersS1 = ['MPOO2','ALGO3','SE','TL','ANG','POP3'];
@@ -26,12 +33,6 @@ function refresh(sem) {
     } else {
         document.getElementById("textResult").innerText = "Année non validé : ";
     }
-}
-
-// functions
-
-function add(sem) {
-  addMater(" ",sem);
 }
 
 // components
