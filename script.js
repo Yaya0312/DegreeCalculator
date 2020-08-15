@@ -61,7 +61,6 @@ function addSemestre(n) {
     <caption>
       Semestre ${n}
       <img onclick="cleanSemestre('s${n}')" src="assets/delete.svg" alt="clean" />
-      <img onclick="cleanSemestre('s${n}')" src="assets/delete.svg" alt="im" />
       <span onclick="imports('s${n}')"> I </span>
     </caption>
     <thead>
