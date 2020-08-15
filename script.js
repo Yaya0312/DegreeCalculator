@@ -71,9 +71,6 @@ function addSemestre(n) {
     <tbody id="s${n}" class="notValid"></tbody>
     <tfoot>
       <tr>
-        <td colspan="3" class="add" onclick="addMater(' ','s${n}')";>Ajouter une matière</td>
-      </tr>
-      <tr>
         <td colspan="2" class="textNote">Note du semestre : </td>
         <td><input type="number" class="noteSemestre" id="notes${n}" onchange="refresh('${n}')"></td>
       </tr>
