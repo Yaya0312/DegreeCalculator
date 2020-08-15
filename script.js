@@ -6,8 +6,28 @@ const zip = (a1, a2) => a1.map((x, i) => [x, a2[i]]); // a[int], b[int] -> [[a[0
 const sum = (arr) => arr.reduce((a,c) => a + c); // a[int] -> (a[0] + ... + a[n])
 
 // data
-const matersS1 = ['MPOO2','ALGO3','SE','TL','ANG','POP3'];
-const matersS2 = ['IHM','Réseau','Compilation','Calcul Symbolique','ANG6','APP INFO','Stage'];
+let matersS1 = ['MPOO2','ALGO3','SE','TL','ANG','POP3'];
+let matersS2 = ['IHM','Réseau','Compilation','Calcul Symbolique','ANG6','APP INFO','Stage'];
+
+//import 
+
+function imports(n) {
+  fetch('data/L1_INFO_ROUEN.json').then(function(response) {
+    if(response.ok) {
+      response.json().then(data => {
+        n == 's1' ? matersS1 = data : matersS2 = data;
+        cleanSemestre(n);
+        (n == 's1' ? matersS1 : matersS2).forEach(x => addMater(x,n));
+      });
+      console.log("ok");
+    } else {
+      console.log('Mauvaise réponse du réseau');
+    }
+  })
+  .catch(function(error) {
+    console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+  });
+}
 
 function refresh(sem) {
     //semester
@@ -27,12 +47,23 @@ function refresh(sem) {
     }
 }
 
+//
+function cleanSemestre(sem) {
+  document.querySelector(`tbody#${sem}`).innerText = "";
+}
+
+
 // components
 
 function addSemestre(n) {
     const sem = `
     <table class="semestre">
-    <caption>Semestre ${n}</caption>
+    <caption>
+      Semestre ${n}
+      <img onclick="cleanSemestre('s${n}')" src="assets/delete.svg" alt="clean" />
+      <img onclick="cleanSemestre('s${n}')" src="assets/delete.svg" alt="im" />
+      <span onclick="imports('s${n}')"> I </span>
+    </caption>
     <thead>
       <th>Matière</th>
       <th>(Coef)</th>
@@ -60,10 +91,6 @@ function addMater(name, sem) {
         <td><input type="number" class="note" onchange="refresh('${sem}')"></td>
     </tr>`;
     document.getElementById(sem).insertAdjacentHTML( 'beforeend', mater);
-}
-
-function removeMater(name, sem) {
-  getsNodes();
 }
 
 // main
