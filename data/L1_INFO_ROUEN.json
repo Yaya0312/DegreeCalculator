@@ -1,1 +1,20 @@
-["LOL","POP","MDR","TL","ANG","POP3"]
+[{
+  "name" : "Semestre 1",
+  "maters" : [
+    { "name" : "ALG1", "coef" : 6.5, "note" : 0 },
+    { "name" : "ANA1", "coef" : 2.5, "note" : 0 },
+    { "name" : "BPI", "coef" : 6.5, "note" : 0 },
+    { "name" : "SI1", "coef" : 6.5, "note" : 0 },
+    { "name" : "ANG", "coef" : 6.5, "note" : 0 },
+    { "name" : "TIC", "coef" : 6.5, "note" : 0 }]
+  },
+  {
+    "name" : "Semestre 1",
+    "maters" : [
+      { "name" : "ALG1", "coef" : 6.5, "note" : 0 },
+      { "name" : "ANA1", "coef" : 6.5, "note" : 0 },
+      { "name" : "BPI", "coef" : 6.5, "note" : 0 },
+      { "name" : "SI1", "coef" : 6.5, "note" : 0 },
+      { "name" : "ANG", "coef" : 6.5, "note" : 0 },
+      { "name" : "TIC", "coef" : 6.5, "note" : 0 }]
+}]
