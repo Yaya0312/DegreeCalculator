@@ -4,19 +4,25 @@ body {
     background-color: #263E45;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #semestres {
     display: flex;
+    height: 8fr;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    height: 90vh;
+}
+
+.coef,.note {
+    width: 2em;
 }
 
 #result {
     background-color: #759AA7;
-    height: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,7 +30,8 @@ body {
 }
 
 td {
-    padding: 5px;
+    padding: 2px;
+    font-size: 13px;
 }
 
 .textNote {
@@ -53,4 +60,8 @@ input[type="number"] {
 caption {
     font-size: 25px;
     font-family: 'Galada', cursive;
+}
+
+input.noteSemestre {
+    background-color: rgba(255, 255, 255, 0.4);
 }

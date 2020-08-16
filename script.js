@@ -6,18 +6,47 @@ const zip = (a1, a2) => a1.map((x, i) => [x, a2[i]]); // a[int], b[int] -> [[a[0
 const sum = (arr) => arr.reduce((a,c) => a + c); // a[int] -> (a[0] + ... + a[n])
 
 // data
-let matersS1 = ['MPOO2','ALGO3','SE','TL','ANG','POP3'];
-let matersS2 = ['IHM','Réseau','Compilation','Calcul Symbolique','ANG6','APP INFO','Stage'];
+let matersS1;
+let matersS2;
+let currentField;
 
-//import 
+//import
+
+fetch(`data/router.json`).then(function(response) {
+  if(response.ok) {
+    response.json().then(data => {
+      let optionList = document.getElementById('domaine').options;
+      let options = data;
+      options.forEach(option =>
+        optionList.add(
+          new Option(option.name, option.url, option.selected)
+        )
+      );
+    });
+    console.log("ok");
+  } else {
+    console.log('Mauvaise réponse du réseau');
+  }
+})
+.catch(function(error) {
+  console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+});
+
+function domanChange() {
+  currentField = document.getElementById('domaine').value;
+  imports();
+}
 
 function imports(n) {
-  fetch('data/L1_INFO_ROUEN.json').then(function(response) {
+  fetch(`data/${currentField}`).then(function(response) {
     if(response.ok) {
       response.json().then(data => {
-        n == 's1' ? matersS1 = data : matersS2 = data;
-        cleanSemestre(n);
-        (n == 's1' ? matersS1 : matersS2).forEach(x => addMater(x,n));
+        matersS1 = data.s1;
+        matersS2 = data.s2;
+        cleanSemestre("s1");
+        cleanSemestre("s2");
+        matersS1.forEach(x => addMater(x,'s1'));
+        matersS2.forEach(x => addMater(x,'s2'));
       });
       console.log("ok");
     } else {
@@ -52,7 +81,6 @@ function cleanSemestre(sem) {
   document.querySelector(`tbody#${sem}`).innerText = "";
 }
 
-
 // components
 
 function addSemestre(n) {
@@ -65,14 +93,13 @@ function addSemestre(n) {
     </caption>
     <thead>
       <th>Matière</th>
-      <th>(Coef)</th>
-      <th>Note</th>
+      <th class="number" >(Coef)</th>
+      <th class="number" >Note</th>
     </thead>
     <tbody id="s${n}" class="notValid"></tbody>
     <tfoot>
       <tr>
-        <td colspan="2" class="textNote">Note du semestre : </td>
-        <td><input type="number" class="noteSemestre" id="notes${n}" onchange="refresh('${n}')"></td>
+        <td colspan="3" ><input type="number" class="noteSemestre" id="notes${n}" onchange="refresh('${n}')"></td>
       </tr>
     </tfoot>
   </table>`;
@@ -83,8 +110,8 @@ function addMater(name, sem) {
     const mater = `
     <tr>
         <td contenteditable >${name}</td>
-        <td><input type="number" class="coef" onchange="refresh('${sem}')"></td>
-        <td><input type="number" class="note" onchange="refresh('${sem}')"></td>
+        <td><input type="number" class="coef number" onchange="refresh('${sem}')" min="0" max="100"></td>
+        <td><input type="number" class="note number" onchange="refresh('${sem}')" min="0" max="20"></td> 
     </tr>`;
     document.getElementById(sem).insertAdjacentHTML( 'beforeend', mater);
 }
@@ -93,5 +120,4 @@ function addMater(name, sem) {
 
 addSemestre(1);
 addSemestre(2);
-matersS1.forEach(x => addMater(x,'s1'));
-matersS2.forEach(x => addMater(x,'s2'));
+domanChange();

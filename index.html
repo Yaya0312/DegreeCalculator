@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <select name="so" id="domaine" onchange="domanChange()"></select>
   <div id="semestres">
     <!-- fill by js -->
   </div>
@@ -18,11 +19,7 @@
     <p id=textResult>
       <!-- fill by js -->
     </p>
-    <input type="number" id="noteFinal">
-    <!-- <div id="save">
-      <img src="./assets/download.svg" alt="download" onclick="download()" >
-      <img src="./assets/upload.svg" alt="upload" onclick="upload()" >
-    </div> -->
+    <input type="number" id="noteFinal" min="0" max="20">
   </div>
 </body>
 <script src="script.js"></script>
