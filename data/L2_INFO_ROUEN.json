@@ -1,5 +1,20 @@
-{
-    "s1" : ["ALGO2", "BPF", "WEB2", "ALG MAT", "(ALG3 ou ATD)", "ANG"],
-    "s2" : ["MPOO1", "(LSI ou FSI)", "BDD", "ALEA", "ANG4", "POP2"]
-}
-
+[{
+  "name" : "Semestre 1",
+  "maters" : [
+    { "name" : "ALGO2", "coef" : 6.5, "note" : 0 },
+    { "name" : "BPF", "coef" : 2.5, "note" : 0 },
+    { "name" : "WEB2", "coef" : 6.5, "note" : 0 },
+    { "name" : "ALG MAT", "coef" : 6.5, "note" : 0 },
+    { "name" : "(ALG3 ou ATD)", "coef" : 6.5, "note" : 0 },
+    { "name" : "ANG", "coef" : 6.5, "note" : 0 }]
+  },
+  {
+    "name" : "Semestre 2",
+    "maters" : [
+      { "name" : "MPOO1", "coef" : 6.5, "note" : 0 },
+      { "name" : "(LSI ou FSI)", "coef" : 6.5, "note" : 0 },
+      { "name" : "BDD", "coef" : 6.5, "note" : 0 },
+      { "name" : "ALEA", "coef" : 6.5, "note" : 0 },
+      { "name" : "ANG4", "coef" : 6.5, "note" : 0 },
+      { "name" : "POP2", "coef" : 6.5, "note" : 0 }]
+}]

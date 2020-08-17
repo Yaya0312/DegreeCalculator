@@ -1,6 +1,10 @@
 
-export function cleanSemestre(sem) {
+function cleanSemestre(sem) {
   document.querySelector(`tbody#${sem}`).innerText = "";
+}
+
+function cleanAllSemestre() {
+  document.querySelector(`tbody`).innerText = "";
 }
 
 function addSemestre(n) {
@@ -12,10 +16,10 @@ function addSemestre(n) {
     </caption>
     <thead>
       <th>Matière</th>
-      <th class="number" >(Coef)</th>
-      <th class="number" >Note</th>
+      <th>(Coef)</th>
+      <th>Note</th>
     </thead>
-    <tbody id="s${n}" class="notValid"></tbody>
+    <tbody id="s${n}"></tbody>
     <tfoot>
       <tr>
         <td colspan="3" ><input type="number" class="noteSemestre" id="notes${n}" onchange="refresh('${n}')"></td>
@@ -25,4 +29,4 @@ function addSemestre(n) {
   document.getElementById("semestres").insertAdjacentHTML( 'beforeend', sem);
 }
 
-export { addSemestre };
+export { cleanSemestre, cleanAllSemestre, addSemestre };
