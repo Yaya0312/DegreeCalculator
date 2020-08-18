@@ -1,32 +1,20 @@
 import { addMater } from './js/mater.js';
 import { getsNodes, zip, sum } from './js/tools.js';
-import { addSemestre, cleanSemestre } from './js/semester.js';
+import { addSemestre, cleanSemestres } from './js/semester.js';
 import { loadList } from './js/importExport.js';
 
 'use strict'
 
-// data
-let matersS1;
-let matersS2;
-let currentField;
-
 //import
 
-export function domanChange() {
-  currentField = document.getElementById('domaine').value;
-  imports();
-}
-
-function imports(n) {
+function imports() {
+  const currentField = document.getElementById('domaine').value;
   fetch(`data/${currentField}`).then(function(response) {
     if(response.ok) {
       response.json().then(data => {
-        matersS1 = data[0].maters;
-        matersS2 = data[1].maters;
-        cleanSemestre("s1");
-        cleanSemestre("s2");
-        matersS1.forEach(x => addMater(x,'s1'));
-        matersS2.forEach(x => addMater(x,'s2'));
+        cleanSemestres();
+        data[0].maters.forEach(x => addMater(x,'s1'));
+        data[1].maters.forEach(x => addMater(x,'s2'));
         document.querySelectorAll(".coef, .note").forEach(x => x.addEventListener('change', refresh))
       });
       console.log("ok");
@@ -39,15 +27,18 @@ function imports(n) {
   });
 }
 
-export function refresh(sem) {
-    sem = "s1";
+export function refreshSemestre(sem) {
+  const notes = Array.from(sem.querySelectorAll(".note")).map(x => x.value);
+  const coefs = Array.from(sem.querySelectorAll(".coef")).map(x => x.value);
+  const resultSemestre = sum(zip(notes, coefs).map(x => x[0] * x[1]));
+  const sumCoef = sum(coefs.map(x => Number(x)));
+  sem.querySelector(".noteSemestre").value = resultSemestre / sumCoef;
+}
+
+export function refresh() {
     //semester
-    const semestres = getsNodes("table");
-    const notes = Array.from(getsNodes(`#${sem} .note`)).map( x => x.value);
-    const coefs = Array.from(getsNodes(`#${sem} .coef`)).map( x => x.value);
-    const resultSemestre = sum(zip(notes, coefs).map(x => x[0] * x[1]));
-    const sumCoef = sum(coefs.map(x => Number(x)));
-    document.getElementById("note" + sem).value = resultSemestre / sumCoef;
+    const semestres = getsNodes(".semestre");
+    semestres.forEach(x => refreshSemestre(x));
     //final
     const notesSemestre = Array.from(getsNodes(".noteSemestre")).map(x => x.value);
     const resulYear = sum(notesSemestre.map(x => Number(x))) / notesSemestre.length;
@@ -67,6 +58,6 @@ function main() {
 }
 
 window.onload = function() {
-  document.getElementById("domaine").addEventListener("change", domanChange);
+  document.getElementById("domaine").addEventListener("change", imports);
   main();
 }

@@ -1,4 +1,3 @@
-import { domanChange } from '../script.js';
 
 function loadList() {
   fetch(`data/router.json`).then(function(response) {
@@ -11,7 +10,6 @@ function loadList() {
             new Option(option.name, option.url, option.selected)
           )
         );
-        domanChange();
       });
       console.log("Donnée chargées");
     } else {

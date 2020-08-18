@@ -3,8 +3,22 @@ function cleanSemestre(sem) {
   document.querySelector(`tbody#${sem}`).innerText = "";
 }
 
-function cleanAllSemestre() {
-  document.querySelector(`tbody`).innerText = "";
+function cleanSemestres() {
+  let semestres = document.querySelectorAll(`tbody`);
+  semestres.forEach( x => x.innerHTML = "");
+}
+
+function getSemestre(number) {
+  const semestres = getsNodes("table");
+  const name = semestres[number].querySelector("caption").innerText;
+  const names = semestres[number].querySelectorAll(".name").forEach(e => { });;
+  const coefs = semestres[number].querySelectorAll(".coef");
+  const notes = semestres[number].querySelectorAll(".note");
+
+  return {
+    "name" : name,
+    "maters" : maters
+  }
 }
 
 function addSemestre(n) {
@@ -12,7 +26,6 @@ function addSemestre(n) {
     <table class="semestre">
     <caption>
       Semestre ${n}
-      <img src="assets/delete.svg" alt="clean" />
     </caption>
     <thead>
       <th>Matière</th>
@@ -22,11 +35,11 @@ function addSemestre(n) {
     <tbody id="s${n}"></tbody>
     <tfoot>
       <tr>
-        <td colspan="3" ><input type="number" class="noteSemestre" id="notes${n}" onchange="refresh('${n}')"></td>
+        <td colspan="3" ><input type="number" class="noteSemestre" id="notes${n}" ></td>
       </tr>
     </tfoot>
   </table>`;
   document.getElementById("semestres").insertAdjacentHTML( 'beforeend', sem);
 }
 
-export { cleanSemestre, cleanAllSemestre, addSemestre };
+export { cleanSemestre, cleanSemestres, addSemestre };

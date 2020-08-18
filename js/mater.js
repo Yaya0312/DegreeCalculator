@@ -2,7 +2,7 @@
 function addMater({name, coef, note}, sem) {
     const mater = `
     <tr>
-      <td contenteditable>
+      <td contenteditable class="name">
         ${name}
       </td>
       <td>
