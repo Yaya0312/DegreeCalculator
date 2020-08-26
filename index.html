@@ -12,7 +12,14 @@
 </head>
 
 <body>
-  <select id="domaine"></select>
+  <div id="options">
+    <select id="domaine"></select>
+    <div id="xload">
+      <img src="./assets/download.svg" alt="download" id="download">
+      <img src="./assets/upload.svg" alt="upload" id="upload" onclick="document.getElementById('dataUpload').click()">
+      <input type="file" id="dataUpload" name="dataUpload" accept="application/json">
+    </div>
+  </div>
   <div id="semestres">
     <!-- fill by js -->
   </div>

@@ -1,1 +1,22 @@
-["LND", "DD"]
+[{
+  "name" : "Semestre 1",
+  "maters" : [
+    { "name" : "MPOO2", "coef" : 6.5, "note" : 0 },
+    { "name" : "Algorithmique 3 : graphes", "coef" : 2.5, "note" : 0 },
+    { "name" : "Systèmes d'exploitation", "coef" : 6.5, "note" : 0 },
+    { "name" : "Théorie des langages", "coef" : 6.5, "note" : 0 },
+    { "name" : "Anglais 5", "coef" : 6.5, "note" : 0 },
+    { "name" : "Préparation à l'insertion professionnelle : POP3", "coef" : 6.5, "note" : 0 }]
+  },
+  {
+    "name" : "Semestre 2",
+    "maters" : [
+      { "name" : "Interfaces homme-machine", "coef" : 6.5, "note" : 0 },
+      { "name" : "Programmation réseau", "coef" : 6.5, "note" : 0 },
+      { "name" : "Compilation", "coef" : 6.5, "note" : 0 },
+      { "name" : "Calcul symbolique", "coef" : 6.5, "note" : 0 },
+      { "name" : "Anglais 6", "coef" : 6.5, "note" : 0 },
+      { "name" : "Application informatique", "coef" : 6.5, "note" : 0 },
+      { "name" : "Stage en entreprise", "coef" : 6.5, "note" : 0 }
+    ]
+}]

@@ -1,18 +1,17 @@
-
-function addMater({name, coef, note}, sem) {
-    const mater = `
+function addMater({ name, coef, note }, semId) {
+  const mater = `
     <tr>
-      <td contenteditable class="name">
+      <td contenteditable class="name" tabindex="-1">
         ${name}
       </td>
       <td>
-        <input type="number" class="coef" min="0" max="100" value="${coef}">
+        <input type="number" class="coef" min="0" max="100" value="${coef}" tabindex="-1">
       </td>
       <td>
         <input type="number" class="note"  min="0" max="20" value="${note}" >
-      </td> 
+      </td>
     </tr>`;
-    document.getElementById(sem).insertAdjacentHTML( 'beforeend', mater);
+  document.querySelectorAll('.semestre>tbody')[semId].insertAdjacentHTML('beforeend', mater);
 }
 
-export { addMater };
+export default addMater;

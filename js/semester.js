@@ -1,45 +1,54 @@
-
-function cleanSemestre(sem) {
-  document.querySelector(`tbody#${sem}`).innerText = "";
-}
+import { getsNodes, zip, sum } from './tools.js';
 
 function cleanSemestres() {
-  let semestres = document.querySelectorAll(`tbody`);
-  semestres.forEach( x => x.innerHTML = "");
+  document.querySelector('#semestres').innerHTML = '';
 }
 
 function getSemestre(number) {
-  const semestres = getsNodes("table");
-  const name = semestres[number].querySelector("caption").innerText;
-  const names = semestres[number].querySelectorAll(".name").forEach(e => { });;
-  const coefs = semestres[number].querySelectorAll(".coef");
-  const notes = semestres[number].querySelectorAll(".note");
-
-  return {
-    "name" : name,
-    "maters" : maters
+  const semestres = getsNodes('table');
+  const name = semestres[number].querySelector('caption').innerText;
+  const names = Array.from(semestres[number].querySelectorAll('.name')).map((e) => e.innerText);
+  const coefs = Array.from(semestres[number].querySelectorAll('.coef')).map((e) => e.value);
+  const notes = Array.from(semestres[number].querySelectorAll('.note')).map((e) => e.value);
+  const maters = [];
+  for (let i = 0; i < names.length; i += 1) {
+    maters.push({ name: names[i], coef: coefs[i], note: notes[i] });
   }
+  return { name, maters };
 }
 
-function addSemestre(n) {
-    const sem = `
+function addSemestre(name) {
+  const sem = `
     <table class="semestre">
     <caption>
-      Semestre ${n}
+      ${name}
     </caption>
     <thead>
       <th>Matière</th>
       <th>(Coef)</th>
       <th>Note</th>
     </thead>
-    <tbody id="s${n}"></tbody>
+    <tbody></tbody>
     <tfoot>
       <tr>
-        <td colspan="3" ><input type="number" class="noteSemestre" id="notes${n}" ></td>
+        <td colspan="3" ><input type="number" class="noteSemestre" ></td>
       </tr>
     </tfoot>
   </table>`;
-  document.getElementById("semestres").insertAdjacentHTML( 'beforeend', sem);
+  document.getElementById('semestres').insertAdjacentHTML('beforeend', sem);
 }
 
-export { cleanSemestre, cleanSemestres, addSemestre };
+function refreshSemestre(sem) {
+  const notes = Array.from(sem.querySelectorAll('.note')).map((x) => x.value);
+  const coefs = Array.from(sem.querySelectorAll('.coef')).map((x) => x.value);
+  const resultSemestre = sum(zip(notes, coefs).map((x) => x[0] * x[1]));
+  const sumCoef = sum(coefs.map((x) => Number(x)));
+  sem.querySelector('.noteSemestre').value = resultSemestre / sumCoef;
+}
+
+export {
+  cleanSemestres,
+  addSemestre,
+  getSemestre,
+  refreshSemestre,
+};

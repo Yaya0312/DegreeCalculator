@@ -42,6 +42,14 @@ td {
     text-align: center;
 }
 
+#options, #xload {
+    display: flex;
+}
+
+#options {
+    justify-content: center;
+}
+
 input[type='number'] {
     background-color: rgba(2, 9, 11, 0.493);
     padding: 10px;
@@ -63,4 +71,8 @@ caption {
 
 input.noteSemestre {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+#dataUpload {
+    display: none;
 }
