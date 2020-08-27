@@ -1,12 +1,12 @@
 [{
   "name" : "Semestre 1",
   "maters" : [
-    { "name" : "ALGO2", "coef" : 6.5, "note" : 0 },
-    { "name" : "BPF", "coef" : 2.5, "note" : 0 },
-    { "name" : "WEB2", "coef" : 6.5, "note" : 0 },
-    { "name" : "ALG MAT", "coef" : 6.5, "note" : 0 },
-    { "name" : "(ALG3 ou ATD)", "coef" : 6.5, "note" : 0 },
-    { "name" : "ANG", "coef" : 6.5, "note" : 0 }]
+    { "name" : "Algorithmique 2", "coef" : 8, "note" : 0 },
+    { "name" : "BPF", "coef" : 6, "note" : 0 },
+    { "name" : "WEB2", "coef" : 4, "note" : 0 },
+    { "name" : "ALG MAT", "coef" : 5, "note" : 0 },
+    { "name" : "(ALG3 ou ATD)", "coef" : 5, "note" : 0 },
+    { "name" : "ANGLAIS", "coef" : 2, "note" : 0 }]
   },
   {
     "name" : "Semestre 2",

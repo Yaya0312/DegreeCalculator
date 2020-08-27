@@ -2,21 +2,21 @@
   "name" : "Semestre 1",
   "maters" : [
     { "name" : "Algèbre 1 : structures mathématiques", "coef" : 6.5, "note" : 0 },
-    { "name" : "Analyse 1", "coef" : 2.5, "note" : 0 },
-    { "name" : "Bases de la programmation impérative", "coef" : 6.5, "note" : 0 },
-    { "name" : "Science du numérique 1", "coef" : 6.5, "note" : 0 },
-    { "name" : "Anglais 1", "coef" : 6.5, "note" : 0 },
-    { "name" : "Formation aux TIC", "coef" : 6.5, "note" : 0 }]
+    { "name" : "Analyse 1", "coef" : 6.5, "note" : 0 },
+    { "name" : "Bases de la programmation impérative", "coef" : 7, "note" : 0 },
+    { "name" : "Science du numérique 1", "coef" : 7, "note" : 0 },
+    { "name" : "Anglais 1", "coef" : 2, "note" : 0 },
+    { "name" : "Formation aux TIC", "coef" : 1, "note" : 0 }]
   },
   {
     "name" : "Semestre 2",
     "maters" : [
-      { "name" : "Algèbre 2", "coef" : 6.5, "note" : 0 },
-      { "name" : "Analyse 2", "coef" : 6.5, "note" : 0 },
-      { "name" : "Algorithmique 1 : méthodologie de la programmation impérative", "coef" : 6.5, "note" : 0 },
-      { "name" : "Science du numérique 2", "coef" : 6.5, "note" : 0 },
-      { "name" : "Technologie du Web 1", "coef" : 6.5, "note" : 0 },
-      { "name" : "Anglais 2", "coef" : 6.5, "note" : 0 },
-      { "name" : "Préparation à l'insertion professionnelle : POP1", "coef" : 6.5, "note" : 0 }
+      { "name" : "Algèbre 2", "coef" : 6, "note" : 0 },
+      { "name" : "Analyse 2", "coef" : 6, "note" : 0 },
+      { "name" : "Algorithmique 1 : méthodologie de la programmation impérative", "coef" : 6, "note" : 0 },
+      { "name" : "Science du numérique 2", "coef" : 5, "note" : 0 },
+      { "name" : "Technologie du Web 1", "coef" : 4, "note" : 0 },
+      { "name" : "Anglais 2", "coef" : 2, "note" : 0 },
+      { "name" : "Préparation à l'insertion professionnelle : POP1", "coef" : 1, "note" : 0 }
     ]
 }]

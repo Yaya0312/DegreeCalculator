@@ -5,16 +5,25 @@ function cleanSemestres() {
 }
 
 function getSemestre(number) {
-  const semestres = getsNodes('table');
-  const name = semestres[number].querySelector('caption').innerText;
-  const names = Array.from(semestres[number].querySelectorAll('.name')).map((e) => e.innerText);
-  const coefs = Array.from(semestres[number].querySelectorAll('.coef')).map((e) => e.value);
-  const notes = Array.from(semestres[number].querySelectorAll('.note')).map((e) => e.value);
+  const semestre = getsNodes('.semestre')[number];
+  const name = semestre.querySelector('caption').innerText;
+  const names = Array.from(semestre.querySelectorAll('.name')).map((e) => e.innerText);
+  const coefs = Array.from(semestre.querySelectorAll('.coef')).map((e) => e.value);
+  const notes = Array.from(semestre.querySelectorAll('.note')).map((e) => e.value);
   const maters = [];
   for (let i = 0; i < names.length; i += 1) {
     maters.push({ name: names[i], coef: coefs[i], note: notes[i] });
   }
   return { name, maters };
+}
+
+function getSemestres() {
+  const semestresLength = getsNodes('.semestre').length;
+  const semestresJSON = [];
+  for (let i = 0; i < semestresLength; i += 1) {
+    semestresJSON.push(getSemestre(i));
+  }
+  return semestresJSON;
 }
 
 function addSemestre(name) {
@@ -50,5 +59,6 @@ export {
   cleanSemestres,
   addSemestre,
   getSemestre,
+  getSemestres,
   refreshSemestre,
 };

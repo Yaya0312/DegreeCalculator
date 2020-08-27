@@ -1,6 +1,6 @@
 import { getsNodes, sum } from './js/tools.js';
 import { refreshSemestre } from './js/semester.js';
-import { exports, imports } from './js/importExport.js';
+import { exports, localImport, externalImport } from './js/importExport.js';
 import loadCursusList from './js/cursusList.js';
 
 export default function refresh() {
@@ -20,8 +20,8 @@ export default function refresh() {
 
 // main
 window.onload = () => {
-  document.getElementById('domaine').addEventListener('change', imports);
+  document.getElementById('domaine').addEventListener('change', localImport);
   document.getElementById('download').addEventListener('click', exports);
-  document.getElementById('upload').addEventListener('click', imports);
+  document.getElementById('dataUpload').addEventListener('change', externalImport);
   loadCursusList();
 };
