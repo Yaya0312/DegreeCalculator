@@ -36,20 +36,16 @@ function localImport() {
 }
 
 function externalImport(evt) {
-  // TODO improve code
-
   const { files } = evt.target;
   if (files == null || files.length === 0) {
     return;
   }
   const file = files[0];
   const reader = new FileReader();
-  reader.onload = (() => {
-    return (e) => {
-      const data = JSON.parse(e.target.result);
-      imports(data);
-    };
-  })(file);
+  reader.onload = ((e) => {
+    const data = JSON.parse(e.target.result);
+    imports(data);
+  });
 
   // Read in the image file as a data URL.
   reader.readAsText(file);
