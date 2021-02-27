@@ -1,0 +1,28 @@
+[{
+  "name" : "Semestre 1",
+  "maters" : [
+    { "name" : "Anglais", "coef" : 2, "note" : 0 },
+    { "name" : "Calculabilité", "coef" : 4, "note" : 0 },
+    { "name" : "Langages Web", "coef" : 4, "note" : 0 },
+    { "name" : "Administration Système", "coef" : 4, "note" : 0 },
+    { "name" : "Bases de données", "coef" : 3, "note" : 0 },
+    { "name" : "Gestion de Projet", "coef" : 4, "note" : 0 },
+    { "name" : "Cryptographie", "coef" : 4, "note" : 0 },
+    { "name" : "Analyse d'articles et de Programmes", "coef" : 3, "note" : 0 },
+    { "name" : "Gestion de la qualité en entreprise", "coef" : 2, "note" : 0 }
+  ]
+  },
+  {
+    "name" : "Semestre 2",
+    "maters" : [
+      { "name" : "Anglais", "coef" : 2, "note" : 0 },
+      { "name" : "Application Informatique", "coef" : 0, "note" : 0 },
+      { "name" : "Administration et Sécurité des Bases de Données", "coef" : 3, "note" : 0 },
+      { "name" : "Outis Formel pour l'Analyse d'Algorithmes", "coef" : 3, "note" : 0 },
+      { "name" : "Réseau", "coef" : 4, "note" : 0 },
+      { "name" : "Programmation Système Avancée", "coef" : 4, "note" : 0 },
+      { "name" : "Logique", "coef" : 4, "note" : 0 },
+      { "name" : "Théorie de l'information", "coef" : 4, "note" : 0 },
+      { "name" : "Techniques de Recherche d'Emploi", "coef" : 2, "note" : 0 }
+    ]
+}]

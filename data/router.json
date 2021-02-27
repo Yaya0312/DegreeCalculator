@@ -1,5 +1,6 @@
 [
   { "name" : "M1 INFO GIL", "url" : "M1_INFO_GIL.json" },
+  { "name" : "M1 INFO SSI", "url" : "M1_INFO_SSI.json" },
   { "name" : "L3_INFO_ROUEN", "url" : "L3_INFO_ROUEN.json" },
   { "name" : "L2_INFO_ROUEN", "url" : "L2_INFO_ROUEN.json" },
   { "name" : "L1_INFO_ROUEN", "url" : "L1_INFO_ROUEN.json" }
