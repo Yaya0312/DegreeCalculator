@@ -1,0 +1,28 @@
+[{
+  "name" : "Semestre 1",
+  "maters" : [
+    { "name" : "Anglais", "coef" : 2, "note" : 0 },
+    { "name" : "Calculabilité", "coef" : 4, "note" : 0 },
+    { "name" : "Langages Web", "coef" : 4, "note" : 0 },
+    { "name" : "Administration Système", "coef" : 4, "note" : 0 },
+    { "name" : "Bases de données", "coef" : 3, "note" : 0 },
+    { "name" : "Gestion de Projet", "coef" : 4, "note" : 0 },
+    { "name" : "Algorithmique du texte", "coef" : 4, "note" : 0 },
+    { "name" : "Outils Collaboratifs", "coef" : 3, "note" : 0 },
+    { "name" : "Gestion de la qualité en entreprise", "coef" : 2, "note" : 0 }
+  ]
+  },
+  {
+    "name" : "Semestre 2",
+    "maters" : [
+      { "name" : "Anglais", "coef" : 2, "note" : 0 },
+      { "name" : "Application Informatique", "coef" : 0, "note" : 0 },
+      { "name" : "Test Logiciel", "coef" : 3, "note" : 0 },
+      { "name" : "XML", "coef" : 3, "note" : 0 },
+      { "name" : "Sémantique et Typage", "coef" : 4, "note" : 0 },
+      { "name" : "Théorie des Jeux", "coef" : 4, "note" : 0 },
+      { "name" : "Architectures Distribuées", "coef" : 4, "note" : 0 },
+      { "name" : "Architectures Logicielles", "coef" : 4, "note" : 0 },
+      { "name" : "Techniques de Recherche d'Emploi", "coef" : 2, "note" : 0 }
+    ]
+}]
