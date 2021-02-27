@@ -1,7 +1,0 @@
-[{
-  "name" : "BAC",
-  "maters" : [
-    { "name" : "Math", "coef" : 6.5, "note" : 0 },
-    { "name" : "SVT", "coef" : 2.5, "note" : 0 }]
-  }
-]

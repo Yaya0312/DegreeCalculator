@@ -1,6 +1,5 @@
 [
   { "name" : "L1_INFO_ROUEN", "url" : "L1_INFO_ROUEN.json" },
   { "name" : "L2_INFO_ROUEN", "url" : "L2_INFO_ROUEN.json" },
-  { "name" : "L3_INFO_ROUEN", "url" : "L3_INFO_ROUEN.json" },
-  { "name" : "BAC 🚧", "url" : "BAC.json" }
+  { "name" : "L1_INFO_ROUEN", "url" : "L1_INFO_ROUEN.json" }
 ]
